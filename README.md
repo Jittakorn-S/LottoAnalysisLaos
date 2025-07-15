@@ -1,6 +1,9 @@
+Sure! Here's the rewritten content in clean and well-structured **Markdown format** for direct use as a `README.md` file:
+
+````markdown
 # 🎯 Lotto Analysis Laos
 
-A Rust-based web application that scrapes, analyzes, and visualizes Laos lottery results using statistical models. This project leverages `actix-web` for the backend and a lightweight HTML/JS frontend for user interaction.
+A Rust-based web application that scrapes, analyzes, and visualizes Laos lottery results using statistical models. The backend is powered by `actix-web`, while the frontend leverages lightweight HTML and JavaScript.
 
 ---
 
@@ -22,17 +25,17 @@ A Rust-based web application that scrapes, analyzes, and visualizes Laos lottery
 
 ## 🧩 Introduction
 
-**Lotto Analysis Laos** is designed to help users explore historical lottery results and apply statistical methods such as mean, median, and normal distribution analysis. The system scrapes real-time lottery data and offers insights via a user-friendly web interface.
+**Lotto Analysis Laos** is designed to scrape real-time Laos lottery results, apply statistical analysis (mean, median, normal distribution), and display the data through a user-friendly web interface.
 
 ---
 
 ## ✨ Features
 
-- 🧮 Statistical analysis (mean, median, max, min, normal distribution)
-- 🕸️ Real-time scraping of Laos lottery results
-- 📊 Dynamic display with JavaScript-driven interactivity
-- 🌐 Web interface built with HTML, CSS, and JS
-- 🐳 Dockerized for ease of deployment
+- 🧮 Statistical analysis: mean, median, min, max, and normal distribution
+- 📈 Real-time scraping of Laos lottery results
+- 🖥️ Interactive web interface with HTML and JavaScript
+- 🚀 Fast Rust backend using `actix-web`
+- 🐳 Docker support for containerized deployment
 
 ---
 
@@ -42,8 +45,8 @@ A Rust-based web application that scrapes, analyzes, and visualizes Laos lottery
 
 - Rust (edition 2021 or later)
 - Cargo
-- Node.js (optional, for frontend dev)
-- Docker (optional, for containerized deployment)
+- Node.js (optional, for frontend development)
+- Docker (optional)
 
 ### Local Setup
 
@@ -52,8 +55,100 @@ A Rust-based web application that scrapes, analyzes, and visualizes Laos lottery
 git clone https://github.com/yourusername/LottoAnalysisLaos.git
 cd LottoAnalysisLaos
 
-# Build the project
+# Build and run the server
 cargo build --release
-
-# Run the server
 cargo run
+````
+
+Visit the app at: [http://localhost:8080](http://localhost:8080)
+
+---
+
+## 🚀 Usage
+
+1. Open `http://localhost:8080` in your browser.
+2. Click the **Scrape** button to collect the latest lottery results.
+3. View analysis output (mean, median, etc.) in the results table.
+
+---
+
+## ⚙️ Configuration
+
+* **Backend logic**: `src/main.rs`
+* **HTML Template**: `templates/index.html`
+* **JavaScript UI**: `static/app.js`
+* **Docker settings**: `Dockerfile`
+* **Render deployment**: `render.yaml`
+
+---
+
+## 🧪 Example Output
+
+| Draw Date  | Numbers   | Mean | Median | Max | Min |
+| ---------- | --------- | ---- | ------ | --- | --- |
+| 2025-07-14 | 5, 13, 28 | 15.3 | 13     | 28  | 5   |
+
+---
+
+## 📦 Dependencies
+
+From `Cargo.toml`:
+
+* `actix-web`, `actix-files`
+* `serde`, `serde_json`
+* `scraper`, `reqwest`
+* `chrono`, `rand`
+* `statrs`, `lazy_static`
+* `tokio`
+
+---
+
+## 🐳 Docker Support
+
+### Build & Run with Docker
+
+```bash
+# Build Docker image
+docker build -t lotto-analysis-laos .
+
+# Run container
+docker run -p 8080:8080 lotto-analysis-laos
+```
+
+Uses a multi-stage build to optimize image size.
+
+---
+
+## 🛠️ Troubleshooting
+
+* **Port conflicts**: Ensure port 8080 is available.
+* **Scraping fails**: Check internet access or site structure changes.
+* **Build errors**: Update Rust toolchain with `rustup update`.
+
+---
+
+## 👥 Contributors
+
+* \[Your Name Here] — *Author & Maintainer*
+
+Feel free to contribute via pull requests or issues!
+
+---
+
+## 📄 License
+
+Specify a license (e.g., MIT, Apache 2.0). Include a `LICENSE` file in the repo.
+
+---
+
+> 🦀 Built with Rust and a passion for statistical analysis.
+
+```
+
+Let me know if you'd like to:
+- Insert your name as contributor
+- Specify a license type
+- Link a real GitHub repo
+
+I'm happy to update the file accordingly!
+```
