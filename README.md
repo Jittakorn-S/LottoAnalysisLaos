@@ -1,25 +1,6 @@
-Sure! Here's the rewritten content in clean and well-structured **Markdown format** for direct use as a `README.md` file:
-
-````markdown
 # 🎯 Lotto Analysis Laos
 
 A Rust-based web application that scrapes, analyzes, and visualizes Laos lottery results using statistical models. The backend is powered by `actix-web`, while the frontend leverages lightweight HTML and JavaScript.
-
----
-
-## 📚 Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Example](#example)
-- [Dependencies](#dependencies)
-- [Docker Support](#docker-support)
-- [Troubleshooting](#troubleshooting)
-- [Contributors](#contributors)
-- [License](#license)
 
 ---
 
