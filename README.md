@@ -107,29 +107,3 @@ Uses a multi-stage build to optimize image size.
 * **Build errors**: Update Rust toolchain with `rustup update`.
 
 ---
-
-## 👥 Contributors
-
-* \[Your Name Here] — *Author & Maintainer*
-
-Feel free to contribute via pull requests or issues!
-
----
-
-## 📄 License
-
-Specify a license (e.g., MIT, Apache 2.0). Include a `LICENSE` file in the repo.
-
----
-
-> 🦀 Built with Rust and a passion for statistical analysis.
-
-```
-
-Let me know if you'd like to:
-- Insert your name as contributor
-- Specify a license type
-- Link a real GitHub repo
-
-I'm happy to update the file accordingly!
-```
