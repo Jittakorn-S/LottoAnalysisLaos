@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let scrapedResultsData = []; 
+    let scrapedResultsData = [];
 
     const scrapeBtn = document.getElementById('scrape-btn');
     const progressContainer = document.getElementById('progress-container');
-    const tableContainer = document.getElementById('table-container'); 
+    const tableContainer = document.getElementById('table-container');
     const resultsHead = document.getElementById('results-head');
     const resultsBody = document.getElementById('results-body');
     let scrapeStatusInterval;
@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
         scrapeBtn.disabled = true;
         scrapeBtn.textContent = 'กำลังดึงข้อมูล...';
         progressContainer.style.display = 'block';
-        tableContainer.style.display = 'none'; 
-        
+        tableContainer.style.display = 'none';
+
         resultsBody.innerHTML = '';
         resultsHead.innerHTML = '';
         analysisSection.style.display = 'none';
@@ -53,20 +53,20 @@ document.addEventListener('DOMContentLoaded', () => {
             resetScraperUI();
         }
     }
-    
+
     function displayScrapeResults(results) {
         if (!results || results.length === 0) {
             progressContainer.innerHTML += '<br>ไม่พบข้อมูลจากการดึงข้อมูล';
             return;
         }
 
-        scrapedResultsData = results; 
-        tableContainer.style.display = 'block'; 
+        scrapedResultsData = results;
+        tableContainer.style.display = 'block';
         progressContainer.style.display = 'none';
-        
+
         // Updated table headers for Laos Lottery
         resultsHead.innerHTML = `<tr><th>Draw Date</th><th>First Prize (3 Digits)</th><th>Second Prize (2 Digits)</th></tr>`;
-        
+
         results.forEach(result => {
             const row = resultsBody.insertRow();
             row.insertCell(0).textContent = result['Draw Date'];
@@ -89,7 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let numbersForAnalysis = [];
         const prizeKey = type === 'first_prize' ? 'First Prize (3 Digits)' : 'Second Prize (2 Digits)';
 
-        scrapedResultsData.forEach(result => {
+        // Create a reversed copy to process newest results last
+        const reversedData = [...scrapedResultsData].reverse();
+
+        reversedData.forEach(result => {
             const prize = result[prizeKey];
             if (prize) {
                 numbersForAnalysis.push(prize.replace(/[^0-9]/g, ''));
@@ -109,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         const numbersArray = numbersText.split(',').map(s => s.trim()).filter(s => s);
-        
+
         analyzeBtn.disabled = true;
         analyzeBtn.textContent = 'กำลังวิเคราะห์...';
         analysisResultsContainer.innerHTML = '<p style="text-align:center;">🧠 AI กำลังประมวลผลข้อมูล... กรุณารอสักครู่</p>';
@@ -162,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const statsHtml = createListHtml('📈 Statistical Summary', statistical_summary);
         const patternsHtml = createListHtml('🔁 Pattern Analysis', pattern_analysis);
         const explanationHtml = createParagraphHtml('📝 Detailed Explanation', detailed_explanation);
-        
+
         analysisResultsContainer.innerHTML = predictionHtml + statsHtml + patternsHtml + explanationHtml;
     }
 });
